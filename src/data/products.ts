@@ -16,7 +16,7 @@ export const productCatalog = {
         {
           id: "agri-submersible",
           name: "Agriculture Submersible Pump",
-          image: "/images/agriculture/submersible-pump/pump.png",
+          image: "/images/agriculture/submersible-pump/pump.webp",
           datasheet: "/pdf/agriculture/agri-submersible.pdf",
         },        
       ],
@@ -31,7 +31,7 @@ export const productCatalog = {
         {
           id: "home-surface",
           name: "Home Surface Pump",
-          image: "/images/residential/surface-pump/pump.png",
+          image: "/images/residential/surface-pump/pump.webp",
           datasheet: "/pdf/residential/home-surface.pdf",
         },
       ],
@@ -39,7 +39,7 @@ export const productCatalog = {
         {
           id: "home-submersible",
           name: "Home Submersible Pump",
-          image: "/images/residential/submersible-pump/pump.png",
+          image: "/images/residential/submersible-pump/pump.webp",
           datasheet: "/pdf/residential/home-submersible.pdf",
         },
       ],
@@ -54,7 +54,7 @@ export const productCatalog = {
         {
           id: "industrial-heavy",
           name: "Heavy Duty Industrial Pump",
-          image: "/images/commercial/industrial-pump/pump.png",
+          image: "/images/commercial/industrial-pump/pump.webp",
           datasheet: "/pdf/commercial/industrial-heavy.pdf",
         },
       ],

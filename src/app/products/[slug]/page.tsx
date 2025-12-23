@@ -1,42 +1,98 @@
-type ProductDetailProps = {
-  params: {
+import { notFound } from "next/navigation";
+import { productCatalog } from "@/data/products";
+
+interface Props {
+  params: Promise<{
     slug: string;
+  }>;
+}
+
+/* ================= SEO METADATA ================= */
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+
+  const title = slug.replace(/-/g, " ");
+
+  return {
+    title: `${title} | Ayesha Machinery`,
+    description:
+      "High-performance motor pumps for agriculture, residential and commercial applications by Ayesha Machinery.",
+    openGraph: {
+      title: `${title} | Ayesha Machinery`,
+      description:
+        "Reliable and energy-efficient motor pumps designed for long service life.",
+      type: "website",
+    },
   };
-};
+}
 
-export default function ProductDetail({ params }: ProductDetailProps) {
-  if (!params?.slug) {
-    return <p>Product not found</p>;
+/* ================= PAGE ================= */
+export default async function ProductDetailPage({ params }: Props) {
+  const { slug } = await params;
+
+  const product =
+    Object.values(productCatalog)
+      .flatMap((cat) => Object.values(cat.categories))
+      .flat()
+      .find((p) => p.id === slug);
+
+  if (!product) {
+    notFound();
   }
-
-  const productName = params.slug.replace(/-/g, " ");
 
   return (
     <section className="section">
-      <h1 className="page-title">{productName}</h1>
-
-      <div className="two-col">
-        <img
-          src="/images/placeholder-pump.png"
-          alt={productName}
-          className="product-detail-img"
+      <div className="container two-col">
+        {/* IMAGE */}
+        <div
+          className="image-box"
+          style={{
+            backgroundImage: `url(${product.image})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "contain",
+          }}
         />
 
+        {/* CONTENT */}
         <div>
-          <h3>Features & Specifications</h3>
-          <ul>
-            <li>100% Copper Winding</li>
-            <li>Thermal Overload Protection</li>
-            <li>Energy Efficient</li>
+          <h1 className="page-title">{product.name}</h1>
+
+          <p className="mt-4 text-gray-600">
+            High-performance motor pump designed for durability, efficiency,
+            and long service life.
+          </p>
+
+          <ul className="mt-4 list-disc ml-6 text-gray-600">
+            <li>Energy efficient motor</li>
+            <li>Heavy-duty construction</li>
+            <li>Low maintenance</li>
+            <li>Suitable for continuous operation</li>
           </ul>
+
+          {product.datasheet && (
+            <a
+              href={product.datasheet}
+              target="_blank"
+              className="btn-primary mt-6 inline-block"
+            >
+              Download Datasheet
+            </a>
+          )}
         </div>
       </div>
 
-      <h3>Applications</h3>
-      <p>
-        Suitable for agriculture irrigation, residential water supply,
-        commercial buildings, and industrial usage.
-      </p>
+      {/* SPECIFICATION SECTION */}
+      <div className="section light-bg">
+        <h2 className="section-title">Technical Specifications</h2>
+
+        <div className="spec-table">
+          <div><strong>Motor Body</strong></div><div>Cast Iron / Aluminium</div>
+          <div><strong>Voltage</strong></div><div>180–240V / 350–440V</div>
+          <div><strong>Applications</strong></div><div>Irrigation, Domestic, Industrial</div>
+          <div><strong>Protection</strong></div><div>Thermal Overload</div>
+        </div>
+      </div>
     </section>
   );
 }

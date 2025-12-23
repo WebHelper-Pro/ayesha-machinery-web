@@ -5,7 +5,7 @@ export default function Header() {
     <header className="site-header">
       <div className="header-wrap">
         <img
-          src="/images/ayesha-logo.png"
+          src="/images/logo.png"
           alt="Ayesha Machinery"
           className="header-logo"
         />

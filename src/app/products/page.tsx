@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { productCatalog } from "@/data/products";
 import { Wheat, Home, Factory, Download } from "lucide-react";
@@ -58,10 +59,16 @@ export default function ProductsPage() {
               <div className="product-grid">
                 {(products as Product[]).map((p) => (
                   <div key={p.id} className="product-card">
-                    <img
-                      src={p.image || "/images/placeholder-pump.webp"}
-                      alt={p.name}
-                    />
+                    {p.image && (
+                      <Image
+                        src={p.image}
+                        alt={p.name}
+                        width={400}
+                        height={300}
+                        priority
+                      />
+                    )}
+
                     <h3>{p.name}</h3>
 
                     <div className="product-actions">
