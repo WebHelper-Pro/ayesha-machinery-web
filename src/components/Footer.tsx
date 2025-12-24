@@ -1,24 +1,29 @@
 import Link from "next/link";
-import { Facebook, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Download } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Brand */}
+        
+        {/* BRAND + CONTACT */}
         <div>
-          <img
-            src="/images/ayesha-logo.png"
-            alt="Ayesha Machinery"
-            className="footer-logo"
-          />
-          <p>
-            Reliable motor pump solutions for agriculture, residential and
-            commercial applications.
-          </p>
+          <Link href="/">
+            <img
+              src="/images/logo.png"
+              alt="Ayesha Machinery"
+              className="footer-logo"
+            />
+          </Link>
+
+          <div className="footer-contact">
+            <p>Ayesha Machinary, 2, Dr.Fatehullah Rd, Lower Bazaar, Ranchi, Jharkhand 834001</p>
+            <p>📞 +91 9835500218</p>
+            <p>✉️ Ayeshamachinery007@gmail.com</p>
+          </div>
         </div>
 
-        {/* Links */}
+        {/* USEFUL LINKS */}
         <div>
           <h4>Useful Links</h4>
           <Link href="/">Home</Link>
@@ -27,21 +32,24 @@ export default function Footer() {
           <Link href="/contact">Contact</Link>
         </div>
 
-        {/* Contact */}
+        {/* DOWNLOAD RESOURCES */}
         <div>
-          <h4>Contact</h4>
-          <p>📍 India</p>
-          <p>📞 +91 XXXXX XXXXX</p>
-          <p>✉️ info@ayeshamachinery.com</p>
+          <h4>Downloads</h4>
+          <a href="/pdf/full-catalog.pdf" target="_blank">
+            <Download size={16} /> Product Catalog
+          </a>
+          {/* <a href="/pdf/company-profile.pdf" target="_blank">
+            <Download size={16} /> Company Profile
+          </a> */}
         </div>
 
-        {/* Social */}
+        {/* SOCIAL */}
         <div>
           <h4>Follow Us</h4>
           <div className="footer-social">
-            <Facebook />
-            <Linkedin />
-            <Instagram />
+            <a href="https://www.facebook.com"><Facebook /></a>
+            <a href="#"><Linkedin /></a>
+            <a href="#"><Instagram /></a>
           </div>
         </div>
       </div>

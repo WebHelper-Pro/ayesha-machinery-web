@@ -14,15 +14,14 @@ export default function ContactPage() {
         <div className="container two-col">
           <ContactForm />
           <div>
-            <h1 className="page-title">Contact Us</h1>
             <p>
               Get in touch with us for expert guidance and product enquiries.
             </p>
 
-            <p>📞 +91 XXXXX XXXXX</p>
-            <p>✉️ info@ayeshamachinery.com</p>
-            <p>📍 India</p>
-          </div>
+            <p>📞 +91 9835500218</p>
+            <p>✉️ Ayeshamachinery007@gmail.com</p>
+            <p>Ayesha Machinary, 2, Dr.Fatehullah Rd, Lower Bazaar, Ranchi, Jharkhand 834001</p>
+            </div>
         </div>
       </section>
 

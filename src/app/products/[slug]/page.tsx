@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { productCatalog } from "@/data/products";
 
+/* ================= TYPES ================= */
 interface Props {
   params: Promise<{
     slug: string;
@@ -10,6 +11,12 @@ interface Props {
 /* ================= SEO METADATA ================= */
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
+
+  if (!slug) {
+    return {
+      title: "Product Not Found | Ayesha Machinery",
+    };
+  }
 
   const title = slug.replace(/-/g, " ");
 
@@ -29,6 +36,10 @@ export async function generateMetadata({ params }: Props) {
 /* ================= PAGE ================= */
 export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
+
+  if (!slug) {
+    notFound();
+  }
 
   const product =
     Object.values(productCatalog)
@@ -58,18 +69,19 @@ export default async function ProductDetailPage({ params }: Props) {
         <div>
           <h1 className="page-title">{product.name}</h1>
 
-          <p className="mt-4 text-gray-600">
-            High-performance motor pump designed for durability, efficiency,
-            and long service life.
-          </p>
+          {/* FEATURES */}
+          {product.features && (
+            <>
+              <h3 className="mt-6">Features</h3>
+              <ul className="mt-3 list-disc ml-6 text-gray-600">
+                {product.features.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+            </>
+          )}
 
-          <ul className="mt-4 list-disc ml-6 text-gray-600">
-            <li>Energy efficient motor</li>
-            <li>Heavy-duty construction</li>
-            <li>Low maintenance</li>
-            <li>Suitable for continuous operation</li>
-          </ul>
-
+          {/* DATASHEET */}
           {product.datasheet && (
             <a
               href={product.datasheet}
@@ -82,17 +94,25 @@ export default async function ProductDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* SPECIFICATION SECTION */}
-      <div className="section light-bg">
-        <h2 className="section-title">Technical Specifications</h2>
+      {/* SPECIFICATIONS */}
+      {product.specifications && (
+        <div className="section light-bg">
+          <h2 className="section-title">Technical Specifications</h2>
 
-        <div className="spec-table">
-          <div><strong>Motor Body</strong></div><div>Cast Iron / Aluminium</div>
-          <div><strong>Voltage</strong></div><div>180–240V / 350–440V</div>
-          <div><strong>Applications</strong></div><div>Irrigation, Domestic, Industrial</div>
-          <div><strong>Protection</strong></div><div>Thermal Overload</div>
+          <div className="spec-table">
+            {Object.entries(product.specifications).map(
+              ([key, value], index) => (
+                <div key={index} className="spec-row">
+                  <div>
+                    <strong>{key}</strong>
+                  </div>
+                  <div>{value}</div>
+                </div>
+              )
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
