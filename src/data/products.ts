@@ -1,7 +1,7 @@
 export const productCatalog = {
   agriculture: {
     categories: {
-      "Surface Pumps": [
+      "Surface & Submersible Pumps": [
         {
           id: "centrifugal-monobloc-pumps-1",
           name: "LHP Centrifugal Monoblock Pump",
@@ -59,9 +59,7 @@ export const productCatalog = {
             Application: "Irrigation & Domestic",
           },
         },
-      ],
-
-      "Submersible Pumps": [
+ 
         {
           id: "agriculture-open-well-pumps",
           name: "Agro 3Ph Horizontal Open Well Pump",
@@ -85,7 +83,7 @@ export const productCatalog = {
 
   residential: {
     categories: {
-      "Surface Pumps": [
+      "Surface & Submersible Pumps": [
         {
           id: "cgcj-vertical-centrifugal-jet-pump",
           name: "Centrifugal Jet Pump",
@@ -103,9 +101,7 @@ export const productCatalog = {
             Application: "Domestic water supply & Collapsed/Irregular bore-well",
           },
         },
-      ],
 
-      "Submersible Pumps": [
         {
           id: "domestic-open-well-pumps-ci-body",
           name: "Z/ZM Series Domestic Open Well Pump",
@@ -122,6 +118,101 @@ export const productCatalog = {
             Voltage: "415V",
             Phase: "Three Phase",
             Application: "Borewell & Agriculture",
+          },
+        },
+
+        
+          {
+          id: "deep-well-jet-pump",
+          name: "Deep Well Jet Pump",
+          image: "/images/residential/surface-pump/deep-well-jet-pump.png",
+          datasheet: "/pdf/residential/deep-well-jet-pump.pdf",
+          features: [
+            "Motor Housing: High Quality Aluminum Alloy extruded",
+            "50 Hz single phase AC power supply",
+            "In built thermal overload protector(T.O.P)",
+            "Motor Insulation Class: F",
+            "Pump Casing: High quality Cast Iron FG200",
+          ],
+          specifications: {
+            Voltage: "220V",
+            Application: "Domestic water supply & Collapsed/Irregular bore-well",
+          },
+        },
+
+        
+          {
+          id: "automatic-pump-controller-presscon",
+          name: "Pump Controller Presscon",
+          image: "/images/residential/surface-pump/automatic-pump-controller-presscon.png",
+          datasheet: "/pdf/residential/automatic-pump-controller-presscon.pdf",
+          features: [
+            "Automatic start/stop of pump as per faucet operation",
+            "In Built reset button",
+            "Integrated with dry run protection",
+            "IP65 protection",
+            "Silent operation",
+          ],
+          specifications: {
+            Voltage: "220–240V",
+            Application: "Pump Protection and Automation",
+          },
+        },
+
+        
+          {
+          id: "multistage-shallow-well-jet-pressure-pump",
+          name: "HM-HBTJ Series Multistage Pressure Pump",
+          image: "/images/residential/surface-pump/multistage-shallow-well-jet-pressure-pump.png",
+          datasheet: "/pdf/residential/multistage-shallow-well-jet-pressure-pump.pdf",
+          features: [
+            "Pressure Pumps and Controller are designed to automatically start/stop on opening and closing of faucets to maintain constant water pressure.",
+            "It is fitted with Y type brass strainer to prevent entry of debris into the pump.",
+            "It is Cut-in & Cut-out pressure adjustable for better performance.",
+            "HBT, JSE, HMS, HMP series are fitted with float level switch to protect the pump from dry run.",
+            "It is fitted with high quality hydro-pneumatic pressure tank to reduce pump cycling and maintain constant water pressure.",
+          ],
+          specifications: {
+            Voltage: "220–240V",
+            Application: "Domestic water supply & Garden irrigation",
+          },
+        },
+        
+        
+          {
+          id: "self-priming-regenerative-monoblock-pump",
+          name: "S-Series Regenrative Monoblock Pump",
+          image: "/images/residential/surface-pump/self-priming-regenerative-monoblock-pump.png",
+          datasheet: "/pdf/residential/self-priming-regenerative-monoblock-pump.pdf",
+          features: [
+            "Motor Housing: High Quality Aluminum Alloy pressure die casted/extruded",
+            "50 Hz single phase AC power supply",
+            "In built thermal overload protector(T.O.P)",
+            "Stainless Steel Shaft SS410",
+            "Pump Casing: High quality Cast Iron FG200",
+          ],
+          specifications: {
+            Voltage: "220V",
+            Application: "Domestic water supply & Garden irrigation",
+          },
+        },
+
+        
+          {
+          id: "self-priming-shallow-well-jet-pump",
+          name: "JSE Series Jet Pump",
+          image: "/images/residential/surface-pump/self-priming-shallow-well-jet-pump.png",
+          datasheet: "/pdf/residential/self-priming-shallow-well-jet-pump.pdf",
+          features: [
+            "Motor Housing: High Quality Aluminum Alloy extruded",
+            "50 Hz single phase AC power supply",
+            "In built thermal overload protector(T.O.P)",
+            "Motor Insulation Class: F",
+            "Pump Casing: High quality Cast Iron FG200",
+          ],
+          specifications: {
+            Voltage: "220V",
+            Application: "Domestic water supply & Collapsed/Irregular bore-well",
           },
         },
       ],
