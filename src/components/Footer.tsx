@@ -23,7 +23,7 @@ export default function Footer() {
 
           <div className="footer-contact">
             <p>Ayesha Machinary, 2, Dr.Fatehullah Rd, Lower Bazaar, Ranchi, Jharkhand 834001</p>
-            <p>📞 +91 9835500218 || 9661191949</p>
+            <p>📞 +91 9835500218, 9661191949</p>
             <p>✉️ ayeshamachinery007@gmail.com</p>
           </div>
         </div>

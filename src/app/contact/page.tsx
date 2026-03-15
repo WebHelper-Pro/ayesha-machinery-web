@@ -18,7 +18,7 @@ export default function ContactPage() {
               Get in touch with us for expert guidance and product enquiries.
             </p>
 
-            <p>📞 +91 9835500218 || 9661191949</p>
+            <p>📞 +91 9835500218, 9661191949</p>
             <p>✉️ ayeshamachinery007@gmail.com</p>
             <p>Ayesha Machinary, 2, Dr.Fatehullah Rd, Lower Bazaar, Ranchi, Jharkhand 834001</p>
             </div>
