@@ -1,11 +1,16 @@
 import Link from "next/link";
 import { Facebook, Instagram, Download } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
+  const whatsappNumber = "919835500218";
+  const message = "Hello Ayesha Machinery, I would like to inquire about your products.";
+  const whatsappUrl = `https://wa.me/919835500218?text=${encodeURIComponent(message)}`;
+
   return (
     <footer className="footer">
       <div className="footer-container">
-        
+
         {/* BRAND + CONTACT */}
         <div>
           <Link href="/">
@@ -49,6 +54,9 @@ export default function Footer() {
           <div className="footer-social">
             <a href="https://www.facebook.com/profile.php?id=61557806794917" target="_blank" rel="noopener noreferrer"><Facebook /></a>
             <a href="https://www.instagram.com/aariz_imran007" target="_blank" rel="noopener noreferrer"><Instagram /></a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-icon">
+              <FaWhatsapp size={24} color="#25D366" />
+            </a>
           </div>
         </div>
       </div>
